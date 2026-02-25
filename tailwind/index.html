@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Proposta Flex - Tailwind</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="min-h-screen bg-gradient-to-b from-slate-50 via-blue-50/40 to-slate-100 font-sans text-slate-800">
+    <div class="min-h-screen lg:grid lg:grid-cols-[260px_1fr]">
+      <aside class="hidden border-r border-slate-200 bg-white/90 px-4 py-5 backdrop-blur lg:block">
+        <div class="mb-4 flex items-center gap-3 rounded-xl border border-slate-100 bg-white p-2">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 text-white">
+            <i class="bi bi-file-earmark-text"></i>
+          </span>
+          <div>
+            <h1 class="text-base font-semibold leading-tight">Proposta Flex</h1>
+            <p class="text-xs text-slate-500">Gestão de Propostas</p>
+          </div>
+        </div>
+
+        <nav class="space-y-1">
+          <a href="#" data-menu class="menu-active flex items-center gap-2 rounded-lg bg-blue-600 px-3 py-2.5 text-sm font-medium text-white">
+            <i class="bi bi-grid-1x2"></i>Dashboard
+          </a>
+          <a href="#" data-menu class="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-slate-100">
+            <i class="bi bi-people text-slate-500"></i>Clientes
+          </a>
+          <a href="#" data-menu class="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-slate-100">
+            <i class="bi bi-file-earmark-text text-slate-500"></i>Propostas
+          </a>
+          <a href="#" data-menu class="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-slate-100">
+            <i class="bi bi-gear text-slate-500"></i>Configurações
+          </a>
+        </nav>
+      </aside>
+
+      <main class="min-w-0 p-2.5 sm:p-3 lg:p-5">
+        <div class="mb-3 flex items-center gap-3 lg:hidden">
+          <button id="openMenu" type="button" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 bg-white text-lg text-slate-700 shadow-sm">
+            <i class="bi bi-list"></i>
+          </button>
+          <div>
+            <h2 class="text-base font-semibold leading-tight">Proposta Flex</h2>
+            <p class="text-xs text-slate-500">Gestão de Propostas</p>
+          </div>
+        </div>
+
+        <section class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+          <h2 class="text-2xl font-bold tracking-tight text-slate-900">Propostas</h2>
+          <p class="mt-1 text-sm text-slate-500">Crie e gerencie suas propostas</p>
+
+          <div class="relative mt-4">
+            <i class="bi bi-search pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+            <input
+              type="search"
+              placeholder="Buscar propostas..."
+              class="h-9 w-full rounded-md border border-slate-300 bg-white pl-9 pr-3 text-sm outline-none ring-blue-200 transition placeholder:text-slate-400 focus:border-blue-400 focus:ring-4"
+            />
+          </div>
+
+          <div class="mt-4 grid gap-2.5">
+            <article class="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-3 py-2.5 transition hover:border-blue-200 hover:bg-blue-50/40">
+              <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-700"><i class="bi bi-file-earmark-text"></i></span>
+              <div>
+                <h3 class="text-[15px] font-semibold text-slate-800">Formatação de computadores</h3>
+                <p class="text-xs text-slate-500">Max Autopeças • 14/12/2026</p>
+              </div>
+            </article>
+
+            <article class="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-3 py-2.5 transition hover:border-blue-200 hover:bg-blue-50/40">
+              <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-700"><i class="bi bi-file-earmark-text"></i></span>
+              <div>
+                <h3 class="text-[15px] font-semibold text-slate-800">Instalação Windows e Office</h3>
+                <p class="text-xs text-slate-500">Super Atacadista • 10/12/2026</p>
+              </div>
+            </article>
+
+            <article class="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-3 py-2.5 transition hover:border-blue-200 hover:bg-blue-50/40">
+              <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-700"><i class="bi bi-file-earmark-text"></i></span>
+              <div>
+                <h3 class="text-[15px] font-semibold text-slate-800">Instalação servidores cloud</h3>
+                <p class="text-xs text-slate-500">99 Coders • 05/11/2026</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="mt-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+          <h2 class="text-2xl font-bold tracking-tight text-slate-900">Propostas (Exemplo com Table)</h2>
+          <p class="mt-1 text-sm text-slate-500">Mesmos dados em formato tabular</p>
+
+          <div class="mt-4 overflow-x-auto rounded-lg border border-slate-200">
+            <table class="min-w-full text-sm">
+              <thead class="bg-slate-50 text-left text-xs uppercase tracking-wider text-slate-500">
+                <tr>
+                  <th class="px-3 py-2 font-semibold">Proposta</th>
+                  <th class="px-3 py-2 font-semibold">Cliente</th>
+                  <th class="px-3 py-2 font-semibold">Data</th>
+                  <th class="px-3 py-2 font-semibold">Status</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                <tr class="bg-white">
+                  <td class="px-3 py-2.5">
+                    <div class="flex items-center gap-2">
+                      <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-700"><i class="bi bi-file-earmark-text"></i></span>
+                      <div>
+                        <p class="text-[14px] font-semibold text-slate-800">Formatação de computadores</p>
+                        <p class="text-xs text-slate-500">Serviços de TI</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-3 py-2.5">Max Autopeças</td>
+                  <td class="px-3 py-2.5">14/12/2026</td>
+                  <td class="px-3 py-2.5"><span class="rounded-md bg-blue-600 px-2 py-0.5 text-xs font-medium text-white">Em análise</span></td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="px-3 py-2.5">
+                    <div class="flex items-center gap-2">
+                      <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-700"><i class="bi bi-file-earmark-text"></i></span>
+                      <div>
+                        <p class="text-[14px] font-semibold text-slate-800">Instalação Windows e Office</p>
+                        <p class="text-xs text-slate-500">Ambiente empresarial</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-3 py-2.5">Super Atacadista</td>
+                  <td class="px-3 py-2.5">10/12/2026</td>
+                  <td class="px-3 py-2.5"><span class="rounded-md bg-emerald-600 px-2 py-0.5 text-xs font-medium text-white">Aprovada</span></td>
+                </tr>
+                <tr class="bg-white">
+                  <td class="px-3 py-2.5">
+                    <div class="flex items-center gap-2">
+                      <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-blue-50 text-blue-700"><i class="bi bi-file-earmark-text"></i></span>
+                      <div>
+                        <p class="text-[14px] font-semibold text-slate-800">Instalação servidores cloud</p>
+                        <p class="text-xs text-slate-500">Infraestrutura</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-3 py-2.5">99 Coders</td>
+                  <td class="px-3 py-2.5">05/11/2026</td>
+                  <td class="px-3 py-2.5"><span class="rounded-md bg-amber-500 px-2 py-0.5 text-xs font-medium text-white">Pendente</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="mt-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+          <h2 class="text-2xl font-bold tracking-tight text-slate-900">Cadastro de Clientes</h2>
+          <p class="mt-1 text-sm text-slate-500">Preencha os dados do cliente</p>
+
+          <form class="mt-4 grid grid-cols-1 gap-3 md:grid-cols-2">
+            <div>
+              <label for="clienteNome" class="mb-1 block text-xs font-medium text-slate-600">Nome completo</label>
+              <input id="clienteNome" type="text" class="h-9 w-full rounded-md border border-slate-300 px-2.5 text-sm outline-none ring-blue-200 transition focus:border-blue-400 focus:ring-4" />
+            </div>
+            <div>
+              <label for="clienteEmpresa" class="mb-1 block text-xs font-medium text-slate-600">Empresa</label>
+              <input id="clienteEmpresa" type="text" class="h-9 w-full rounded-md border border-slate-300 px-2.5 text-sm outline-none ring-blue-200 transition focus:border-blue-400 focus:ring-4" />
+            </div>
+            <div>
+              <label for="clienteEmail" class="mb-1 block text-xs font-medium text-slate-600">E-mail</label>
+              <input id="clienteEmail" type="email" class="h-9 w-full rounded-md border border-slate-300 px-2.5 text-sm outline-none ring-blue-200 transition focus:border-blue-400 focus:ring-4" />
+            </div>
+            <div>
+              <label for="clienteTelefone" class="mb-1 block text-xs font-medium text-slate-600">Telefone</label>
+              <input id="clienteTelefone" type="tel" class="h-9 w-full rounded-md border border-slate-300 px-2.5 text-sm outline-none ring-blue-200 transition focus:border-blue-400 focus:ring-4" />
+            </div>
+            <div>
+              <label for="clienteDocumento" class="mb-1 block text-xs font-medium text-slate-600">CPF/CNPJ</label>
+              <input id="clienteDocumento" type="text" class="h-9 w-full rounded-md border border-slate-300 px-2.5 text-sm outline-none ring-blue-200 transition focus:border-blue-400 focus:ring-4" />
+            </div>
+            <div>
+              <label for="clienteTipo" class="mb-1 block text-xs font-medium text-slate-600">Tipo de cliente</label>
+              <select id="clienteTipo" class="h-9 w-full rounded-md border border-slate-300 px-2.5 text-sm outline-none ring-blue-200 transition focus:border-blue-400 focus:ring-4">
+                <option>Selecione</option>
+                <option>Pessoa Física</option>
+                <option>Pessoa Jurídica</option>
+              </select>
+            </div>
+            <div>
+              <label for="clienteStatus" class="mb-1 block text-xs font-medium text-slate-600">Status</label>
+              <select id="clienteStatus" class="h-9 w-full rounded-md border border-slate-300 px-2.5 text-sm outline-none ring-blue-200 transition focus:border-blue-400 focus:ring-4">
+                <option>Ativo</option>
+                <option>Inativo</option>
+              </select>
+            </div>
+            <div class="md:col-span-2">
+              <label for="clienteObs" class="mb-1 block text-xs font-medium text-slate-600">Observações</label>
+              <textarea id="clienteObs" rows="3" class="w-full rounded-md border border-slate-300 px-2.5 py-2 text-sm outline-none ring-blue-200 transition focus:border-blue-400 focus:ring-4"></textarea>
+            </div>
+            <div class="flex gap-2 md:col-span-2">
+              <button type="submit" class="rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-blue-700">Salvar cliente</button>
+              <button type="reset" class="rounded-md border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 transition hover:bg-slate-50">Limpar</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="mt-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+          <h2 class="text-2xl font-bold tracking-tight text-slate-900">Ações Rápidas</h2>
+          <p class="mt-1 text-sm text-slate-500">Exemplo de botões com ícones</p>
+
+          <div class="mt-4 flex flex-wrap gap-2">
+            <button class="rounded-md bg-blue-600 px-3 py-1.5 text-sm text-white"><i class="bi bi-plus-circle mr-1"></i>Incluir</button>
+            <button class="rounded-md bg-amber-500 px-3 py-1.5 text-sm text-white"><i class="bi bi-pencil-square mr-1"></i>Alterar</button>
+            <button class="rounded-md bg-red-600 px-3 py-1.5 text-sm text-white"><i class="bi bi-trash mr-1"></i>Excluir</button>
+            <button class="rounded-md border border-red-600 bg-white px-3 py-1.5 text-sm text-red-600"><i class="bi bi-x-octagon mr-1"></i>Deletar</button>
+            <button class="rounded-md bg-cyan-600 px-3 py-1.5 text-sm text-white"><i class="bi bi-search mr-1"></i>Procurar</button>
+            <button class="rounded-md bg-emerald-600 px-3 py-1.5 text-sm text-white"><i class="bi bi-folder2-open mr-1"></i>Abrir</button>
+            <button class="rounded-md bg-slate-500 px-3 py-1.5 text-sm text-white"><i class="bi bi-x-circle mr-1"></i>Fechar</button>
+            <button class="rounded-md bg-slate-900 px-3 py-1.5 text-sm text-white"><i class="bi bi-arrow-left-circle mr-1"></i>Voltar</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="menuOverlay" class="fixed inset-0 z-40 hidden bg-slate-900/40 lg:hidden"></div>
+    <aside id="mobileMenu" class="fixed inset-y-0 left-0 z-50 w-[260px] -translate-x-full border-r border-slate-200 bg-white p-4 shadow-xl transition-transform duration-200 lg:hidden">
+      <div class="mb-4 flex items-center justify-between border-b border-slate-200 pb-3">
+        <h3 class="text-base font-semibold">Proposta Flex</h3>
+        <button id="closeMenu" class="rounded-md p-1 text-slate-600 hover:bg-slate-100"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <div class="mb-4 flex items-center gap-3 rounded-xl border border-slate-100 bg-white p-2">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-blue-600 text-white"><i class="bi bi-file-earmark-text"></i></span>
+        <div>
+          <p class="text-sm font-semibold">Proposta Flex</p>
+          <p class="text-xs text-slate-500">Gestão de Propostas</p>
+        </div>
+      </div>
+
+      <nav class="space-y-1">
+        <a href="#" data-menu class="menu-active flex items-center gap-2 rounded-lg bg-blue-600 px-3 py-2.5 text-sm font-medium text-white">
+          <i class="bi bi-grid-1x2"></i>Dashboard
+        </a>
+        <a href="#" data-menu class="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-slate-100">
+          <i class="bi bi-people text-slate-500"></i>Clientes
+        </a>
+        <a href="#" data-menu class="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-slate-100">
+          <i class="bi bi-file-earmark-text text-slate-500"></i>Propostas
+        </a>
+        <a href="#" data-menu class="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-slate-100">
+          <i class="bi bi-gear text-slate-500"></i>Configurações
+        </a>
+      </nav>
+    </aside>
+
+    <script>
+      const openMenu = document.getElementById("openMenu");
+      const closeMenu = document.getElementById("closeMenu");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const menuOverlay = document.getElementById("menuOverlay");
+
+      function showMenu() {
+        mobileMenu.classList.remove("-translate-x-full");
+        menuOverlay.classList.remove("hidden");
+      }
+
+      function hideMenu() {
+        mobileMenu.classList.add("-translate-x-full");
+        menuOverlay.classList.add("hidden");
+      }
+
+      openMenu?.addEventListener("click", showMenu);
+      closeMenu?.addEventListener("click", hideMenu);
+      menuOverlay?.addEventListener("click", hideMenu);
+
+      const menuClasses = [
+        "bg-blue-600",
+        "text-white"
+      ];
+      const defaultClasses = [
+        "text-slate-700"
+      ];
+
+      document.querySelectorAll("[data-menu]").forEach((link) => {
+        link.addEventListener("click", function () {
+          document.querySelectorAll("[data-menu]").forEach((item) => {
+            item.classList.remove(...menuClasses);
+            item.classList.add(...defaultClasses);
+            const icon = item.querySelector("i");
+            if (icon) icon.classList.add("text-slate-500");
+          });
+
+          this.classList.add(...menuClasses);
+          this.classList.remove(...defaultClasses);
+          const icon = this.querySelector("i");
+          if (icon) icon.classList.remove("text-slate-500");
+        });
+      });
+    </script>
+  </body>
+</html>
